@@ -7,6 +7,23 @@
 	outline: 0;
 }
 
+$tema: deserto;
+$primary-color: black;
+$secondary-color: gray;
+
+@if $tema == oceano {
+	$primary-color: blue;
+	$secondary-color: orange;
+} @else if $tema == deserto {
+	$primary-color: black;
+	$secondary-color: gray;	
+}
+
+p {
+	color: $primary-color;
+	background-color: $secondary-color;
+}
+
 @mixin title-large {
 	font-size: 4em;
 	font-weight: bold;

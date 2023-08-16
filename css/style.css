@@ -10,6 +10,11 @@
   outline: 0;
 }
 
+p {
+  color: black;
+  background-color: gray;
+}
+
 div {
   background-color: var(--white);
   padding: 10px;
