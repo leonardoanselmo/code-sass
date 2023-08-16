@@ -1,0 +1,68 @@
+@import '../partial/colors';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+@mixin title-large {
+	font-size: 4em;
+	font-weight: bold;
+	font-family: monospace;
+	line-height: 1;
+}
+
+@mixin separador($color, $largura) {
+	&::after {
+		content: '';
+		display: block;
+		width: $largura;
+		height: 4px;
+		background: $color;
+	}
+}
+
+@mixin color-title($color) {
+	color: $color;
+}
+
+@mixin mobile {
+	@media (max-width: 600px) {
+		@content
+	}
+}
+
+div {
+	background-color: var(--white);
+	padding: 10px;
+	h1 {
+		color: $roxo;
+		@include title-large();
+		@include separador($gray-ligth, 200px);		
+	}
+	a {
+		margin: 10px;
+		display: inline-block;
+		border-radius: 12px;
+	  text-decoration: none;
+		background-color: #85F;
+		color: $white;
+		padding: 20px;
+		&:hover {
+			color: $roxo;
+		}
+	}
+}
+
+h2 {
+	@include title-large;
+	@include color-title(rgb(248, 194, 15));
+	@include mobile{
+		color: pink;
+		font-size: 2em;
+	}
+}
+
+
